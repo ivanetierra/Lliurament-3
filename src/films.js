@@ -24,12 +24,14 @@ function moviesAverageOfDirector(array, director) {
   const totalOfDirector = moviesFromDirector.reduce((accumulator, movie) => accumulator + movie.score, 0);
   const averageOfDirector = (totalOfDirector / moviesFromDirector.length);
   return Number(averageOfDirector.toFixed(2));
-
 }
 
 // Exercise 4:  Alphabetic order by title 
 function orderAlphabetically(array) {
-  
+  arrayCopy =[...array];
+  const sortedMovies = arrayCopy.sort((a, b) => a.title.localeCompare(b.title));
+  const titles = sortedMovies.map(movie => movie.title);
+  return titles.slice(0, 20);
 }
 
 // Exercise 5: Order by year, ascending
